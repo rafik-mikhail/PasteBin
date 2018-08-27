@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+<link rel="stylesheet" href="/static/styles/default.css">
+<script src="/static/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <div class="article-entry">
     <p>by {{ object.user }}</p>
-    <p>{{ object.code }}</p>
+    <pre><code class={{ object.language }}><p>{{ object.code }}</p></code></pre>
 </div>
 <p><a href="{% url 'gist_edit' object.pk %}">Edit</a> | <a href="{% url 'gist_delete' object.pk %}">Delete</a></p>
 <p>Back to <a href="{% url 'gist_list' %}">All Gists</a>.</p>
