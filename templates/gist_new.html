@@ -2,7 +2,7 @@
 {% block content%}
 <form method="post">
     {% csrf_token %}
-    Code: <input type="text" name="code">
+    Code: <textarea type="text" name="code"></textarea>
     Sharable: <input type="checkbox" name="sharable">
     Expiration: <input type="number" name="expiration">
     Language: <input type="text" name="language">
